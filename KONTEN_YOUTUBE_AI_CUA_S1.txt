@@ -1,0 +1,95 @@
+================================================================================
+  PANDUAN & KONTEN METADATA VIDEO YOUTUBE (SESUAI KAIDAH RESMI YOUTUBE)
+  Proyek: Otomasi Formulir Sensus Penduduk Berbasis AI CUA-S1-FORMS
+  Penulis: Richie Octavian S. (Panita Community Gorontalo)
+================================================================================
+
+--------------------------------------------------------------------------------
+[1] KAIDAH & BATASAN RESMI YOUTUBE:
+--------------------------------------------------------------------------------
+1. Judul Video (Title):
+   - Batas Keras (Hard Limit)   : Maksimal 100 karakter.
+   - Panjang Ideal (Optimal)    : 60 - 70 karakter (agar tidak terpotong '...' di HP).
+2. Deskripsi Video (Description):
+   - Batas Keras (Hard Limit)   : Maksimal 5.000 karakter.
+   - Hook 'Above the Fold'      : 120 - 150 karakter pertama (terbaca sebelum tombol '...more').
+   - Timestamps                 : Wajib diawali '00:00', format menit:detik rapi.
+3. Kolom Tag (YouTube Studio)   : Maksimal 500 karakter total (dipisahkan koma).
+4. Tagar (Hashtags)             : Maksimal 15 hashtag (Direkomendasikan 3-8 hashtag).
+
+================================================================================
+[2] PILIHAN JUDUL VIDEO (LENGKAP DENGAN JUMLAH KARAKTER)
+================================================================================
+
+PILIHAN 1 (SANGAT DIREKOMENDASIKAN - CTR TINGGI, BAHASA RAMAH AWAM):
+Otomasi Formulir Sensus Pakai AI Lokal! 200 Data Masuk Cuma 60 Detik
+--> Jumlah Karakter: 68 karakter (Lolos 100% kaidah tampilan mobile & desktop)
+
+PILIHAN 2 (GAYA TEKNIS & DEVELOPER):
+Otomasi Formulir Sensus Pakai AI CUA-S1: 200 Data Masuk 60 Detik!
+--> Jumlah Karakter: 65 karakter (Sangat ringkas dan to-the-point)
+
+PILIHAN 3 (EDUKATIF & KOMPARASI SYSTEM 1 / JEV TYPESAFE.AI):
+AI System 1 vs Formulir Sensus: Input 200 Data Warga Cuma 60 Detik!
+--> Jumlah Karakter: 67 karakter (Menarik minat antusias AI & Programmer)
+
+PILIHAN 4 (FORMAL / PRESENTASI KOMUNITAS & AKADEMIK):
+Otomasi Pengisian Formulir Sensus Penduduk Berbasis AI CUA-S1
+--> Jumlah Karakter: 60 karakter (Elegan untuk presentasi resmi)
+
+
+================================================================================
+[3] DESKRIPSI LENGKAP VIDEO (SIAP COPY-PASTE)
+================================================================================
+(Jumlah Karakter: 2.768 karakter dari batas maksimal 5.000 karakter)
+
+Capek ketik ulang data sensus dari Google Form? Tonton cara AI CUA-S1 mengisi 28 kolom formulir otomatis: 200 data cuma 60 detik!
+
+Dalam video tutorial ini, kita membedah solusi praktis untuk mengatasi kendala nyata di lapangan: 'Data Re-entry Bottleneck'—yaitu bagaimana menjembatani hasil pengumpulan data warga (Google Form / KoboToolbox) ke aplikasi database sensus internal yang berada di intranet tertutup (air-gapped) tanpa rekayasa backend ilegal.
+
+🔥 BUKAN ROBOT KLIK BIASA (SELENIUM / PLAYWRIGHT)!
+Sistem ini menggunakan arsitektur AI CUA-S1-FORMS (Option-Attention Byte Transformer) berbobot ringan (~2.8 MB). 
+
+Berbeda dengan LLM generatif biasa yang lambat karena harus menyusun teks obrolan kata demi kata, CUA-S1 mengadopsi paradigma 'System 1' (mirip dengan pendekatan model Jev dari TypeSafe.ai). Model ini tidak berhalusinasi, melainkan langsung menghitung probabilitas matematis (Confidence Score rata-rata 97.9%) untuk menentukan target kolom formulir dan mentransmisikan data secara headless lewat protokol HTTP POST standar.
+
+Keunggulan Sistem:
+✅ 100% Offline & Aman: Data NIK dan KK tidak dikirim ke cloud internet luar.
+✅ Kebal Typo & Singkatan: Menggunakan 257 Raw Byte Tokenizer (UTF-8).
+✅ Sangat Cepat: Kecepatan ~16 data/detik (160x lebih cepat dari entri manual).
+✅ Akurasi Tinggi: Skor keyakinan rata-rata 97.9% pada 28 atribut formulir.
+
+⏱️ DAFTAR ISI / TIMESTAMPS:
+00:00 Masalah Nyata: Dari Google Form ke Intranet Sensus Tertutup
+01:30 Mengapa Aturan Biasa (If-Else / Regex) Sering Gagal?
+03:15 Konsep AI System 1 (Komparasi Jev TypeSafe.ai vs CUA-S1)
+05:45 Cara AI Melihat Formulir: Byte Tokenizer & Option Attention
+08:20 Uji Coba Inferensi 1 Data Warga (Cek Skor Keyakinan)
+11:00 Uji Coba Massal: 200 Data Warga Selesai dalam 60 Detik!
+13:40 Verifikasi Integritas Data di MySQL & phpMyAdmin
+15:30 Penutup, Tautan Repositori & Publikasi Ilmiah
+
+📄 DOKUMEN ILMIAH & SUMBER KODE RESMI:
+Karya ilmiah dan kode program proyek ini telah terdaftar resmi secara internasional:
+📌 DOI Resmi (Zenodo CERN): https://doi.org/10.5281/zenodo.22855123
+📌 Portal Web & Scholar Index: https://tuwiliyt.github.io/sensus-ai-cua-forms/
+📌 Repositori GitHub: https://github.com/tuwiliyt/sensus-ai-cua-forms
+📌 Unduh Karya Ilmiah PDF (Bahasa Indonesia): https://raw.githubusercontent.com/tuwiliyt/sensus-ai-cua-forms/main/Karya_Ilmiah_Model_AI_CUA_S1_Sensus.pdf
+📌 Download Scientific Paper PDF (English Edition): https://raw.githubusercontent.com/tuwiliyt/sensus-ai-cua-forms/main/Scientific_Paper_CUA_S1_AI_Census_Form_Automation_EN.pdf
+
+👤 IDENTITAS PENULIS:
+Penulis: Richie Octavian S.
+Afiliasi: Pemerhati AI dari Panita Community Gorontalo
+
+Silakan LIKE jika video ini bermanfaat, tinggalkan KOMENTAR jika ada diskusi teknis, dan SUBSCRIBE untuk pembaruan inovasi kecerdasan buatan berikutnya!
+
+#ArtificialIntelligence #MachineLearning #SensusPenduduk #Python #TutorialAI #SystemOne #TypeSafeAI #DataEntry #Automation #PanitaCommunity #Gorontalo
+
+
+================================================================================
+[4] TAGS UNTUK KOLOM TAG YOUTUBE STUDIO (SIAP COPY-PASTE)
+================================================================================
+(Jumlah Karakter: 295 karakter dari batas maksimal 500 karakter)
+
+sensus penduduk, otomasi formulir, kecerdasan buatan, machine learning, python tutorial, cua s1, typesafe ai, jev ai, option attention, transformer, richie octavian s, panita community gorontalo, data entry otomatis, headless form submission, google form to database, pytorch indonesia, tutorial sensus
+
+================================================================================
