@@ -5,7 +5,7 @@
 [![Affiliation](https://img.shields.io/badge/Affiliation-Panita%20Community%20Gorontalo-orange.svg)](#penulis--afiliasi)
 [![Review Score](https://img.shields.io/badge/Peer%20Review-9.81%2F10.0%20(APPROVED)-success.svg)](#publikasi-ilmiah-resmi)
 [![Model](https://img.shields.io/badge/AI%20Model-CUA--S1--FORMS%20(Safetensors)-purple.svg)](#arsitektur-model-ai)
-[![Zenodo](https://img.shields.io/badge/Zenodo-Integration%20Ready-024c7e.svg)](https://zenodo.org/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22855123.svg)](https://doi.org/10.5281/zenodo.22855123)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](#lisensi)
 
 ---
@@ -22,7 +22,11 @@ Karya tulis ilmiah populer dan laporan teknis lengkap tersedia dalam 2 versi bah
    [**Scientific_Paper_CUA_S1_AI_Census_Form_Automation_EN.pdf**](./Scientific_Paper_CUA_S1_AI_Census_Form_Automation_EN.pdf) *(13 Pages, 2.44 MB)*  
    *Title: Automating Population Census Form-Filling Using the CUA-S1-FORMS Artificial Intelligence Model: Bridging External Field Surveys with Air-Gapped Internal Census Systems*
 
-3. 🌐 **Portal Landing Page & Web Index:**  
+3. 🏛️ **Arsip Resmi Zenodo (CERN) & DOI:**  
+   [**https://doi.org/10.5281/zenodo.22855123**](https://doi.org/10.5281/zenodo.22855123)  
+   *(Digital Object Identifier resmi, terindeks di DataCite & OpenAIRE)*
+
+4. 🌐 **Portal Landing Page & Web Index:**  
    [**https://tuwiliyt.github.io/sensus-ai-cua-forms/**](https://tuwiliyt.github.io/sensus-ai-cua-forms/)  
    *(Dilengkapi Highwire Press Meta Tags & Schema.org JSON-LD untuk pengindeksan Google Scholar)*
 
