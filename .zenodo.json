@@ -1,0 +1,26 @@
+{
+  "title": "Otomasi Pengisian Formulir Kependudukan Menggunakan Model Kecerdasan Buatan CUA-S1-FORMS: Menjembatani Formulir Lapangan Eksternal dengan Sistem Sensus Internal Tertutup",
+  "creators": [
+    {
+      "name": "Octavian S., Richie",
+      "affiliation": "Panita Community Gorontalo"
+    }
+  ],
+  "description": "<p>Karya ilmiah populer dan sistem otomasi pengisian formulir sensus penduduk menggunakan model kecerdasan buatan CUA-S1-FORMS (Option-Attention Byte Transformer). Proyek ini memecahkan kendala <em>Data Re-entry Bottleneck</em> akibat pemisahan jaringan antara pengumpulan data warga di lapangan (menggunakan Google Form atau KoboToolbox) dengan database sensus intranet tertutup (<em>air-gapped</em>) tanpa rekayasa backend ilegal.</p><p>Repositori ini mencakup naskah publikasi ilmiah dwibahasa (Bahasa Indonesia & English), skrip inferensi PyTorch CUA-S1, dataset dummy 200 warga, dan aplikasi web sensus internal.</p>",
+  "access_right": "open",
+  "license": "MIT",
+  "keywords": [
+    "CUA-S1-FORMS",
+    "Option-Attention",
+    "Byte Transformer",
+    "Sensus Penduduk",
+    "Otomasi Formulir",
+    "Google Form",
+    "Air-gapped Intranet",
+    "Headless Form Submission",
+    "Panita Community Gorontalo",
+    "Richie Octavian S."
+  ],
+  "upload_type": "publication",
+  "publication_type": "technicalnote"
+}

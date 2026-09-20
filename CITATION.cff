@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Jika Anda mengutip karya ilmiah atau menggunakan perangkat lunak ini, silakan gunakan format sitasi berikut."
+title: "Otomasi Pengisian Formulir Kependudukan Menggunakan Model Kecerdasan Buatan CUA-S1-FORMS: Menjembatani Formulir Lapangan Eksternal dengan Sistem Sensus Internal Tertutup"
+authors:
+  - family-names: "Octavian S."
+    given-names: "Richie"
+    affiliation: "Panita Community Gorontalo"
+version: "1.0.0"
+date-released: "2026-09-20"
+license: "MIT"
+repository-code: "https://github.com/tuwiliyt/sensus-ai-cua-forms"
+url: "https://tuwiliyt.github.io/sensus-ai-cua-forms/"
+keywords:
+  - "CUA-S1-FORMS"
+  - "Option-Attention"
+  - "Byte Transformer"
+  - "Sensus Penduduk"
+  - "Otomasi Formulir"
+  - "Panita Community Gorontalo"

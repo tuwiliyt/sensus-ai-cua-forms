@@ -5,6 +5,7 @@
 [![Affiliation](https://img.shields.io/badge/Affiliation-Panita%20Community%20Gorontalo-orange.svg)](#penulis--afiliasi)
 [![Review Score](https://img.shields.io/badge/Peer%20Review-9.81%2F10.0%20(APPROVED)-success.svg)](#publikasi-ilmiah-resmi)
 [![Model](https://img.shields.io/badge/AI%20Model-CUA--S1--FORMS%20(Safetensors)-purple.svg)](#arsitektur-model-ai)
+[![Zenodo](https://img.shields.io/badge/Zenodo-Integration%20Ready-024c7e.svg)](https://zenodo.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](#lisensi)
 
 ---
