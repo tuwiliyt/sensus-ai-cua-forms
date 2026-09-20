@@ -1,0 +1,262 @@
+================================================================================
+          PANDUAN PRAKTIS & MUDAH DIPAHAMI (UNTUK ORANG AWAM)
+     CARA MENGISI FORMULIR SENSUS OTOMATIS DENGAN MODEL AI CUA-S1-FORMS
+================================================================================
+
+--------------------------------------------------------------------------------
+LATAR BELAKANG NYATA: MENGAPA MODEL AI INI DIBUTUHKAN?
+--------------------------------------------------------------------------------
+Di lapangan, seringkali terjadi skenario nyata seperti ini:
+
+1. KEBUTUHAN DI LAPANGAN:
+   Petugas pendata di lapangan mengumpulkan data warga menggunakan aplikasi 
+   formulir eksternal yang mudah diakses lewat ponsel, misalnya: Google Form, 
+   KoboToolbox, JotForm, atau spreadsheet online.
+
+2. KENDALA KEAMANAN SISTEM UTAMA:
+   Di sisi lain, aplikasi sensus utama dan database kependudukan resmi berada 
+   di server internal/jaringan kantor yang aman dan terisolasi. Aplikasi ini 
+   TIDAK BISA dan TIDAK BOLEH diakses oleh sembarang orang dari internet bebas 
+   demi menjaga kerahasiaan NIK, Kartu Keluarga, dan privasi warga negara.
+
+3. MASALAH PEKERJAAN BERULANG (DATA RE-ENTRY):
+   Akibat pemisahan sistem tersebut, petugas admin di kantor terpaksa harus 
+   melakukan PEKERJAAN BERULANG yang melelahkan: membuka hasil unduhan Google 
+   Form, lalu mengetikkan ulang ratusan baris data satu demi satu ke formulir 
+   aplikasi sensus internal secara manual. Pekerjaan ini memakan waktu berhari-
+   hari dan sangat rawan terjadi salah ketik (human error).
+
+>>> INI ADALAH SOLUSINYA! <<<
+Model AI CUA-S1-FORMS hadir sebagai solusi otomatisasi cerdas. Model AI ini 
+bertindak sebagai robot asisten yang membaca berkas hasil Google Form/CSV, 
+memahami sendiri kolom mana yang harus diisi, lalu mengisikan data ke aplikasi 
+sensus internal dan menyimpannya ke database dalam hitungan detik secara akurat!
+--------------------------------------------------------------------------------
+
+Referensi Sumber Resmi:
+- Video Tutorial YouTube : https://www.youtube.com/watch?v=Rzgd-y3mCPs
+- Laman Model AI Resmi   : https://huggingface.co/cua-ai/cua-s1-forms
+- Repositori Kode Sumber : https://github.com/trycua/cua
+
+================================================================================
+DAFTAR ISI PANDUAN:
+================================================================================
+1. [KONSEP DASAR] Apa yang Sebenarnya Dilakukan oleh Model AI Ini?
+2. [PERSIAPAN] Membuka Terminal & Mengetahui Alamat Website
+3. [LANGKAH 1] Memeriksa Database (Memastikan Data Mulai dari Nol)
+4. [LANGKAH 2] Memasang Aplikasi Pendukung AI (Hanya 1 Kali)
+5. [LANGKAH 3] Mengunduh Otak AI (Model Checkpoint) dari Internet
+6. [LANGKAH 4] Uji Coba Manual 1: AI Mengisi 1 Formulir Warga
+7. [LANGKAH 5] Uji Coba Manual 2: AI Mengisi Ratusan Formulir Sekaligus (Batch)
+8. [LANGKAH 6] Cara Memeriksa Hasilnya di Layar Anda
+9. [LANGKAH 7] Pertolongan Pertama Jika Ada Masalah (Troubleshooting)
+
+================================================================================
+1. [KONSEP DASAR] APA YANG SEBENARNYA DILAKUKAN OLEH MODEL AI INI?
+================================================================================
+Bayangkan Anda memiliki seorang asisten kantor digital bernama "CUA-S1".
+
+Tugas asisten ini:
+1. Membaca lembar data warga hasil formulir eksternal (Google Form / CSV).
+2. Membuka formulir pendaftaran warga di website sensus internal.
+3. Mencocokkan sendiri kolom yang tepat secara cerdas:
+   - Tulisan nama dimasukkan ke kotak "Full name".
+   - Tanggal lahir dimasukkan ke kotak "Date of birth".
+   - Nomor KK dimasukkan ke kotak "Policy # / No KK".
+   - Alamat domisili dimasukkan ke kotak "Street address".
+   - Jaminan kesehatan dimasukkan ke kotak "Insurance provider".
+4. Setelah semua kotak terisi dengan benar, asisten AI ini secara otomatis
+   mengeklik tombol "Submit" (Kirim Data).
+
+AI ini bekerja menggunakan jaringan saraf tiruan (neural network). Dia tidak 
+menggunakan aturan kaku 'if/else', melainkan membaca teks per karakter, 
+menghitung tingkat keyakinan (misal: 100% yakin), lalu mengambil tindakan.
+
+================================================================================
+2. [PERSIAPAN] MEMBUKA TERMINAL & MENGETAHUI ALAMAT WEBSITE
+================================================================================
+Sebelum mulai:
+
+A. CARA MEMBUKA TERMINAL:
+   - Klik ikon "Terminal" (layar hitam) yang ada di Desktop atau di menu sistem.
+   - Di jendela Terminal inilah Anda akan mengetikkan perintah-perintah di bawah.
+
+B. ALAMAT WEBSITE YANG SUDAH AKTIF DI KOMPUTER ANDA:
+   - Website Formulir & Data Sensus : http://127.0.0.1:8000/data.php
+   - Panel Database (phpMyAdmin)     : http://127.0.0.1:8000/phpmyadmin/
+
+================================================================================
+3. [LANGKAH 1] MEMERIKSA DATABASE (MEMASTIKAN DATA MULAI DARI NOL)
+================================================================================
+Tujuan: Memastikan tidak ada data lama yang tersisa di database, agar pengujian 
+Anda benar-benar bersih dan nomor urut warga dimulai dari angka 1.
+
+Ketik perintah ini di Terminal, lalu tekan ENTER:
+mysql -e "SELECT COUNT(*) AS total_data FROM db_sensus.penduduk;"
+
+HASIL YANG BENAR DI LAYAR:
++------------+
+| total_data |
++------------+
+|          0 |
++------------+
+(Artinya database Anda bersih, total data saat ini = 0).
+
+JIKA KELAK INGIN MERESET KEMBALI JADI 0, CUKUP KETIK:
+mysql -e "TRUNCATE TABLE db_sensus.penduduk;"
+
+================================================================================
+4. [LANGKAH 2] MEMASANG APLIKASI PENDUKUNG AI (HANYA 1 KALI)
+================================================================================
+Tujuan: Memasang paket Python yang dibutuhkan agar komputer Anda bisa 
+menjalankan komputasi kecerdasan buatan (PyTorch).
+
+Ketik perintah ini di Terminal, lalu tekan ENTER:
+pip install torch transformers huggingface_hub safetensors requests
+
+Keterangan Santai:
+- torch           : Mesin pemikir jaringan saraf AI.
+- huggingface_hub : Alat pengunduh file model AI dari situs Hugging Face.
+- safetensors     : Format penyimpanan bobot AI yang sangat ringan dan aman.
+- requests        : Alat pengirim data dari AI ke website.
+
+================================================================================
+5. [LANGKAH 3] MENGUNDUH OTAK AI DARI INTERNET
+================================================================================
+Tujuan: Mengunduh file library dan bobot model AI resmi (ukurannya sangat kecil,
+hanya sekitar 2.8 Megabyte, sehingga selesai hanya dalam hitungan detik).
+
+BAGIAN A: Mengunduh Kode Program Pendukung dari GitHub
+Ketik perintah ini di Terminal, lalu tekan ENTER:
+cd /root/Desktop/aplikasi-sensus
+git clone --depth 1 --filter=blob:none --sparse https://github.com/trycua/cua.git cua-repo
+cd cua-repo
+git sparse-checkout set libs/cua-s1
+cd ..
+
+BAGIAN B: Mengunduh File Bobot Model AI dari Hugging Face
+Ketik perintah ini di Terminal, lalu tekan ENTER:
+python3 -c "
+from huggingface_hub import hf_hub_download
+import os
+print('Mengunduh model CUA-S1-FORMS...')
+w = hf_hub_download('cua-ai/cua-s1-forms', 'cua-s1-forms.safetensors')
+print('✓ Selesai! Ukuran file model:', round(os.path.getsize(w)/1024/1024, 2), 'MB')
+"
+
+HASIL YANG BENAR DI LAYAR:
+✓ Selesai! Ukuran file model: 2.82 MB
+
+================================================================================
+6. [LANGKAH 4] UJI COBA MANUAL 1: AI MENGISI 1 FORMULIR WARGA
+================================================================================
+Tujuan: Menguji coba model AI untuk mengisi data 1 orang warga bernama 
+"Farhan Alamsyah, M.T." asal Kota Bandung.
+
+Ketik perintah ini di Terminal, lalu tekan ENTER:
+python3 /root/Desktop/aplikasi-sensus/run_cua_model_test.py
+
+APA YANG TERJADI?
+Dalam hitungan 1 detik, layar Terminal akan menampilkan analisis AI seperti ini:
+================ HASIL PREDIKSI MODEL AI CUA-S1 ================
+ [EDIT  ] Policy #             -> FILL : '3273010106240003' (100.0%)
+ [EDIT  ] Full name            -> FILL : 'Farhan Alamsyah, M.T.' ( 86.3%)
+ [EDIT  ] Date of birth        -> FILL : '1996-05-19' (100.0%)
+ [EDIT  ] City                 -> FILL : 'Kota Bandung' ( 99.9%)
+ [EDIT  ] Street address       -> FILL : 'Jl. Sangkuriang Barat No. 12' (100.0%)
+ [EDIT  ] Insurance provider   -> FILL : 'BPJS Non-PBI / Mandiri' ( 99.4%)
+ [BUTTON] Submit               -> CLICK: Eksekusi Submit (100.0%)
+
+✓ BERHASIL! Data telah tersimpan di MySQL (db_sensus) dan berkas CSV.
+
+CARA MEMBACA HASIL DI ATAS:
+- Angka persen (%) menunjukkan seberapa yakin AI bahwa data tersebut cocok.
+  Contoh: "Date of birth (100.0%)" artinya AI yakin 100% bahwa '1996-05-19' 
+  adalah tanggal lahir.
+- Pada baris [BUTTON], AI memutuskan untuk "CLICK" tombol Submit (100%), 
+  sehingga data langsung terkirim dan tersimpan ke sistem database.
+
+SEKARANG BUKA BROWSER ANDA:
+Buka alamat: http://127.0.0.1:8000/data.php
+Anda akan melihat data nomor urut 1 (Farhan Alamsyah) sudah masuk ke tabel!
+
+================================================================================
+7. [LANGKAH 5] UJI COBA MANUAL 2: AI MENGISI RATUSAN FORMULIR SEKALIGUS (BATCH)
+================================================================================
+Tujuan: Mengatasi pekerjaan berulang (entry ulang ratusan baris dari hasil Google 
+Form/spreadsheet eksternal) agar AI yang mengerjakannya secara otomatis.
+
+Ada 3 pilihan perintah yang bisa Anda coba di Terminal:
+
+PILIHAN A: Coba isi 10 orang dulu (uji coba singkat)
+python3 /root/Desktop/aplikasi-sensus/batch_cua_ai_filler.py --limit 10
+
+PILIHAN B: Coba isi 50 orang
+python3 /root/Desktop/aplikasi-sensus/batch_cua_ai_filler.py --limit 50
+
+PILIHAN C: Isi SELURUH 200 warga sekaligus (Rekomendasi!)
+python3 /root/Desktop/aplikasi-sensus/batch_cua_ai_filler.py --limit 0
+
+TAMPILAN YANG AKAN MUNCUL DI TERMINAL:
+Terminal akan menampilkan laporan baris demi baris secara langsung:
+ [001/200] AI Forward Pass OK -> Terisi: Andi Nasution     (NIK: 3273012102630046)
+ [002/200] AI Forward Pass OK -> Terisi: Eka Batubara      (NIK: 3273015002620049)
+ [003/200] AI Forward Pass OK -> Terisi: Irfan Nasution    (NIK: 3273011303990047)
+ ...
+ [200/200] AI Forward Pass OK -> Terisi: Maya Handayani    (NIK: 1371016209180032)
+
+===========================================================================
+ [✓] Selesai! Berhasil memproses 200 dari 200 data menggunakan AI Model.
+ [⏱] Waktu eksekusi inferensi AI: ~60 detik
+===========================================================================
+
+Artinya: Seluruh 200 warga berhasil diproses oleh AI dan disimpan ke database!
+
+================================================================================
+8. [LANGKAH 6] CARA MEMERIKSA HASILNYA DI LAYAR ANDA
+================================================================================
+Anda bisa melihat hasil kerja AI melalui 3 cara mudah:
+
+CARA 1: MELALUI WEBSITE SENSUS (Tampilan Paling Mudah Dilihat)
+1. Buka browser Google Chrome di komputer Anda.
+2. Buka link: http://127.0.0.1:8000/data.php
+   - Anda akan melihat tulisan: "Menampilkan data (Total data: 200)".
+   - Anda bisa mencoba mengetik nama warga di kolom pencarian.
+   - Anda bisa mengklik tombol hijau "Detail" di kanan untuk melihat 28 kolom 
+     lengkap data warga tersebut.
+3. Buka link grafik: http://127.0.0.1:8000/statistik.php
+   - Menampilkan diagram warna-warni sebaran umur, jenis kelamin, dan pendidikan.
+
+CARA 2: MELALUI PHPMYADMIN (Melihat Database Asli MySQL)
+1. Buka link: http://127.0.0.1:8000/phpmyadmin/
+2. Di kolom sebelah kiri, klik database: "db_sensus" -> klik tabel: "penduduk".
+3. Klik tab "Jelajahi (Browse)" di bagian atas.
+4. Anda akan melihat 200 baris data tersimpan rapi di dalam tabel MySQL.
+
+CARA 3: MELALUI SPREADSHEET (File CSV)
+1. Lihat di Desktop komputer Anda.
+2. Klik dua kali ikon "Buka Spreadsheet Sensus (Gnumeric)".
+3. Aplikasi spreadsheet ringan (Gnumeric) akan terbuka dan menampilkan data CSV.
+
+================================================================================
+9. [LANGKAH 7] PERTOLONGAN PERTAMA JIKA ADA MASALAH (TROUBLESHOOTING)
+================================================================================
+Jika komputer sempat dimatikan atau website tiba-tiba tidak bisa dibuka:
+
+MASALAH 1: Website http://127.0.0.1:8000/ tidak bisa diakses
+Solusi: Jalankan kembali server PHP dengan perintah:
+nohup php -S 0.0.0.0:8000 -t /root/Desktop/aplikasi-sensus > /dev/null 2>&1 &
+
+MASALAH 2: Database MySQL mati
+Solusi: Jalankan kembali database MySQL dengan perintah:
+nohup mariadbd --user=mysql > /dev/null 2>&1 &
+
+SOLUSI ALL-IN-ONE (1 PERINTAH UNTUK MENYALAKAN SEMUANYA):
+Ketik di Terminal:
+bash /root/Desktop/aplikasi-sensus/start.sh
+
+================================================================================
+SELAMAT MENCOBA!
+Semua file, script, dan model AI sudah siap 100%. Silakan buka Terminal dan 
+mulai mencoba langkah demi langkah di atas!
+================================================================================

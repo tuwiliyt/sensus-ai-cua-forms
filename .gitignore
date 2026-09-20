@@ -1,0 +1,17 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Log files
+*.log
+
+# OS generated
+.DS_Store
+.directory
+Thumbs.db
+
+# Archives
+*.zip
+*.tar.gz
+*.rar

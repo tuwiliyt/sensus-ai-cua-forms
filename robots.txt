@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tuwiliyt.github.io/sensus-ai-cua-forms/sitemap.xml
